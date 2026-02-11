@@ -1,0 +1,12 @@
+.bx-livechat-wrapper {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    width: 100% !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    border-radius:  0 !important;
+  }
+
+  .bx-livechat-wrapper .bx-livechat-box{
+    border-radius: 0 !important;
+  }
