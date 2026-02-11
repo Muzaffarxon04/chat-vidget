@@ -19,6 +19,12 @@
   s.src=u+'?'+(Date.now()/60000|0);
   var h=d.getElementsByTagName('script')[0];
   h.parentNode.insertBefore(s,h);
+  w.B24_WIDGET_LOADED = true;
+  w.addEventListener('onBitrixLiveChat', function(e){
+        if (e.detail && e.detail.widget && typeof e.detail.widget.open === 'function') {
+          e.detail.widget.open();
+        }
+    });
 })(window,document,'https://bitrix.ovi.uz/upload/crm/site_button/loader_1_cguwhe.js');
 </script>
 

@@ -19,3 +19,7 @@ html, body {
   .bx-livechat-wrapper .bx-livechat-box{
     border-radius: 0 !important;
   }
+
+  .bx-livechat-widget-resize-handle, .bx-livechat-control-btn-close{
+    display: none !important;
+  }
