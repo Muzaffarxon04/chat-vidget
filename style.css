@@ -1,3 +1,12 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+
 .bx-livechat-wrapper {
     height: 100vh !important;
     max-height: 100vh !important;
