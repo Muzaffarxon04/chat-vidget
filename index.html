@@ -11,8 +11,24 @@
 
 <div id="chat-container"></div>
 
+<script type="text/javascript">
+
+window.$crisp=[];window.
+
+CRISP_WEBSITE_ID="2aa86f9a-1595-4347-b4ee-ae5e8b45a518";(function(){d=document;s=d.createElement("script");
+$crisp.push(["config", "locale", "uz"]); 
+s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+
+  // Auto popup 5 soniyadan keyin
+window.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function(){
+        $crisp.push(["do", "chat:open"]);
+    }, 1); // 5000 = 5 soniya
+});
+</script>
+
 <!-- Bitrix widget -->
-<script>
+<!-- <script>
 (function(w,d,u){
   var s=d.createElement('script');
   s.async=true;
@@ -26,7 +42,12 @@
         }
     });
 })(window,document,'https://bitrix.ovi.uz/upload/crm/site_button/loader_1_cguwhe.js');
-</script>
+</script> -->
+<noscript>
+  <div style="padding:20px; background:#fdd; text-align:center;">
+    Live chat не доступен. Пожалуйста, обновите страницу или используйте desktop.
+  </div>
+</noscript>
 
 </body>
 </html>
