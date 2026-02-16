@@ -11,38 +11,37 @@
 
 <div id="chat-container"></div>
 
+<div id="chat-loader">
+  <div class="chat-loader-spinner"></div>
+</div>
+
 <script type="text/javascript">
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var locale = params.get("lang") || params.get("locale") || "ru";
+  CRISP_RUNTIME_CONFIG = { locale: locale };
+  window.$crisp=[];window.CRISP_WEBSITE_ID="2aa86f9a-1595-4347-b4ee-ae5e8b45a518";(function(){d=document;s=d.createElement("script");
+  $crisp.push(["config", "locale", locale]); 
+  s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+})();
 
-window.$crisp=[];window.
+function hideLoader() {
+  var loader = document.getElementById("chat-loader");
+  if (loader) {
+    loader.classList.add("chat-loader-hidden");
+    setTimeout(function(){ loader.style.display = "none"; }, 300);
+  }
+}
 
-CRISP_WEBSITE_ID="2aa86f9a-1595-4347-b4ee-ae5e8b45a518";(function(){d=document;s=d.createElement("script");
-$crisp.push(["config", "locale", "uz"]); 
-s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+$crisp.push(["on", "session:loaded", function() {
+  hideLoader();
+  $crisp.push(["do", "chat:open"]);
+}]);
 
-  // Auto popup 5 soniyadan keyin
-window.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function(){
-        $crisp.push(["do", "chat:open"]);
-    }, 1); // 5000 = 5 soniya
-});
+setTimeout(hideLoader, 1000);
 </script>
 
-<!-- Bitrix widget -->
-<!-- <script>
-(function(w,d,u){
-  var s=d.createElement('script');
-  s.async=true;
-  s.src=u+'?'+(Date.now()/60000|0);
-  var h=d.getElementsByTagName('script')[0];
-  h.parentNode.insertBefore(s,h);
-  w.B24_WIDGET_LOADED = true;
-  w.addEventListener('onBitrixLiveChat', function(e){
-        if (e.detail && e.detail.widget && typeof e.detail.widget.open === 'function') {
-          e.detail.widget.open();
-        }
-    });
-})(window,document,'https://bitrix.ovi.uz/upload/crm/site_button/loader_1_cguwhe.js');
-</script> -->
+
 <noscript>
   <div style="padding:20px; background:#fdd; text-align:center;">
     Live chat не доступен. Пожалуйста, обновите страницу или используйте desktop.

@@ -6,6 +6,35 @@ html, body {
   background: transparent;
 }
 
+#chat-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  transition: opacity 0.3s ease;
+}
+
+#chat-loader.chat-loader-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chat-loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #e0e0e0;
+  border-top-color: #415eff;
+  border-radius: 50%;
+  animation: chat-loader-spin 0.5s linear infinite;
+}
+
+@keyframes chat-loader-spin {
+  to { transform: rotate(360deg); }
+}
+
 
 
 .bx-livechat-wrapper {
